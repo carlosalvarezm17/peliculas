@@ -93,4 +93,13 @@ class Pelicula {
         "overview": overview,
         "release_date": "${releaseDate.year.toString().padLeft(4, '0')}-${releaseDate.month.toString().padLeft(2, '0')}-${releaseDate.day.toString().padLeft(2, '0')}",
     };
+    
+    getPosterImg(){
+
+      if(posterPath == null){
+        return 'https://image.shutterstock.com/image-vector/picture-vector-icon-no-image-260nw-1350441335.jpg';
+      }else{
+        return 'https://image.tmdb.org/t/p/w500/$posterPath';
+      }
+    }
 }
