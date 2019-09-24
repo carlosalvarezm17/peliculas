@@ -104,7 +104,7 @@ class PeliculaDetalle extends StatelessWidget {
   Widget _crearCasting(Pelicula pelicula) {
     
     final peliProvider = new PeliculasProvider();
-
+    
     return FutureBuilder(
       future: peliProvider.getCast(pelicula.id),
       builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
