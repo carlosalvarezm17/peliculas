@@ -61,11 +61,14 @@ class PeliculaDetalle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image(
-              image: NetworkImage(pelicula.getPosterImg()),
-              height: 150,
+          Hero(
+            tag: pelicula.uniqueId,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image(
+                image: NetworkImage(pelicula.getPosterImg()),
+                height: 150,
+              ),
             ),
           ),
           Flexible(

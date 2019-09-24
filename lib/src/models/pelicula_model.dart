@@ -28,6 +28,9 @@ Pelicula peliculaFromJson(String str) => Pelicula.fromJson(json.decode(str));
 String peliculaToJson(Pelicula data) => json.encode(data.toJson());
 
 class Pelicula {
+
+    String uniqueId;
+
     double popularity;
     int voteCount;
     bool video;
