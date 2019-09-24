@@ -11,6 +11,7 @@ class PeliculasProvider{
   String _language = 'en-US';
 
   int _popularesPage = 0;
+  bool _cargando = false;
 
   List<Pelicula> _populares = new List();
 
@@ -45,6 +46,10 @@ class PeliculasProvider{
 
   Future<List<Pelicula>>getPopular() async{
 
+    if (_cargando) return [];
+
+    _cargando = true;
+
     _popularesPage++;
     
     final url =Uri.http(_url, '3/movie/popular',{
@@ -59,6 +64,7 @@ class PeliculasProvider{
 
     popularesSink(_populares);
 
+    _cargando = false;
     return resp;
     
     //return await _procesarRespuesta(url);
